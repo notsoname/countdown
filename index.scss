@@ -1,0 +1,55 @@
+@mixin breakpoint ($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: .3s all;
+}
+
+
+h1 {
+    font-size: 70px;
+    transition: .3s all;
+    @include breakpoint(768px) {
+        font-size: 48px;
+    }
+    @include breakpoint(480px) {
+        font-size: 36px;
+    }
+}
+
+.input {
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    
+}
+
+.countdown {
+    font-size: 48px;
+    transition: .3s all;
+
+    @include breakpoint(768px) {
+        font-size: 36px;
+    }
+    @include breakpoint(480px) {
+        font-size: 24px;
+    }
+}
